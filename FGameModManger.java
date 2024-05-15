@@ -1,3 +1,4 @@
+import bluej.pkgmgr.Project;
 import greenfoot.*;
 
 /**
@@ -6,7 +7,7 @@ import greenfoot.*;
  * @author (your name)
  * @version (a version number or a date)
  */
-public class FGameModManger extends Actor {
+public class FGameModManger extends World {
 
     private static FGameModManger gameModManger;
 
@@ -14,6 +15,7 @@ public class FGameModManger extends Actor {
     private FLoadGameConfig loadGameConfig = new FLoadGameConfig();
     private FLoadGameState loadGameState = new FLoadGameState();
     private Logger log = Logger.getInstance();
+    private FMessage infotext = new FMessage();
 
     private FLoadFromAutoSave loadFromAutoSave;
     private FUpdateAutoSave updateAutoSave;
@@ -41,18 +43,20 @@ public class FGameModManger extends Actor {
      * Constructor for objects of class GameModManger
      */
     public FGameModManger() {
+        super(600, 400, 1);
 
+        this.log = Logger.getInstance();
+        log.call("InitGame", "logger.getInstance() String log wurde die loggerInstance hinzugefügt");
+   
+        log.call("InitGame",
+                " infotext.showText(\"Spiel wird geladen\", this, 300, 200, 24, null, Color.WHITE); wird aufgerufen");
+        infotext.showText("Spiel wird geladen", this, 300, 200, 24, null, Color.WHITE);
+        log.log("Game is starting", "green");
+        log.call("InitGame", "prepare()");
+        gameInit();
+  
     }
-
     public void act() {
-        if (fgameModMangerInstace) {
-            System.out.println("GameModManger wird gestoppt Irgeendwas ist schief gelaufen");
-            Greenfoot.stop();
-        }
-        if (gameModManger != null) {
-            System.out.println("GameModManger wird gestoppt Irgeendwas ist schief gelaufen");
-            Greenfoot.stop();
-        }
     }
 
     public static FGameModManger getInstanc() {
@@ -70,7 +74,7 @@ public class FGameModManger extends Actor {
 
     public void gameInit() {
         log.call("GameModManger", "setCurrentWorld(1); wird aufgerufen");
-        setCurrentWorld(1);
+        setStartScreen();
 
     }
 
@@ -215,37 +219,37 @@ public class FGameModManger extends Actor {
 
     public void setGameModeTow() {
         Greenfoot.setWorld(new WGameModeTow());
-        setCurrentWorld(3);
+
     }
 
     public void setGameModeOne() {
         Greenfoot.setWorld(new GameModeOne());
-        setCurrentWorld(2);
+
     }
 
     public void setStartScreen() {
         Greenfoot.setWorld(new WStartWelt());
-        setCurrentWorld(1);
+
     }
 
     public void setPauseScreen() {
         Greenfoot.setWorld(new WPauseWorld());
-        setCurrentWorld(4);
+
     }
 
     public void setEndScreen() {
-        Greenfoot.setWorld(endWorld);
-        setCurrentWorld(5);
+        Greenfoot.setWorld(new WEndWorld());
+
     }
 
     public void setLoadingScreen() {
-        Greenfoot.setWorld(loding);
-        setCurrentWorld(7);
+        Greenfoot.setWorld(new WLoding());
+
     }
 
     public void setSaveSelctScreen() {
-        Greenfoot.setWorld(saveSelct);
-        setCurrentWorld(6);
+        Greenfoot.setWorld(new WSaveSelct());
+
     }
 
     public String getLevelName() {
