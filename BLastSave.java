@@ -8,10 +8,11 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot und MouseInfo)
  */
 public class BLastSave extends Actor {
 
-    private FGameModManger gameModManger;
+    FGameModManger gameManager = FGameModManger.getInstanc();
+
 
     public BLastSave() {
-        this.gameModManger = FGameModManger.getInstanc();
+        
     }
 
     /**
@@ -21,7 +22,7 @@ public class BLastSave extends Actor {
 
     public void act() {
         if (Greenfoot.mouseClicked(this)) {
-            gameModManger.loadfromSave();
+            gameManager.loadfromSave();
         }
     }
 }

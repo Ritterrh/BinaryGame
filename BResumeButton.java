@@ -7,16 +7,16 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot und MouseInfo)
  * @version (eine Versionsnummer oder ein Datum)
  */
 public class BResumeButton extends Actor {
-private FGameModManger gameModManger;
+   private  FGameModManger gameManager = FGameModManger.getInstanc();
+
     public BResumeButton() {
-        gameModManger = FGameModManger.getInstanc();
     }
 
     public void act() {
 
         // Ergänzen Sie Ihren Quelltext hier...
         if (Greenfoot.mouseClicked(this)) {
-            gameModManger.loadfromAutoSave();
+            gameManager.loadfromAutoSave();
         }
     }
 }

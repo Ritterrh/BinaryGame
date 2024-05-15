@@ -13,7 +13,8 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class GameModeOne extends World {
 
-    public FGameModManger gameModManger;
+    FGameModManger gameManager = FGameModManger.getInstanc();
+
 
     private FMessage leveltext = new FMessage();
     private FMessage pointstext = new FMessage();
@@ -34,14 +35,14 @@ public class GameModeOne extends World {
     public GameModeOne() {
 
         super(36, 27, 33);
-        this.gameModManger = FGameModManger.getInstanc();
+        
         loadlevel();
         loadGameMode();
     }
 
     public void act() {
-        leveltext.showText("Deine Level: " + gameModManger.getLevel(), this, 1010, 10, 24, null, Color.WHITE);
-        pointstext.showText("Deine Punkte: " + gameModManger.getPoints(), this, 1010, 40, 24, null, Color.WHITE);
+        leveltext.showText("Deine Level: " + gameManager.getLevel(), this, 1010, 10, 24, null, Color.WHITE);
+        pointstext.showText("Deine Punkte: " + gameManager.getPoints(), this, 1010, 40, 24, null, Color.WHITE);
     }
 
     public void loadlevel() {

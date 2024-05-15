@@ -9,14 +9,15 @@ public class IBinaryTextBoxResult extends Actor {
     private int row;
     private int col;
     private World world;
-    private FGameModManger gameModManger;
+    FGameModManger gameManager = FGameModManger.getInstanc();
+
 
 
     public IBinaryTextBoxResult(World world, int row, int col) {
         this.col = col;
         this.row = row;
         this.world = world;
-        this.gameModManger = FGameModManger.getInstanc();
+
         image = new GreenfootImage("BinaryTextBoxResult.jpg");
         updateText("Deine Eingabe");
     }
@@ -28,7 +29,7 @@ public class IBinaryTextBoxResult extends Actor {
                 this.vaules = Integer.parseInt(eingabe);
              //     System.out.println("Eingabe" + vaules);
               //    System.out.println("Row" + row);
-                 gameModManger.checkInputGameModeOne(vaules, row, col);
+                 gameManager.checkInputGameModeOne(vaules, row, col);
                 updateText(eingabe);
             }
         }

@@ -7,7 +7,8 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot und MouseInfo)
  * @version (eine Versionsnummer oder ein Datum)
  */
 public class BStartButton extends Actor {
-    private FGameModManger gameModManger;
+    FGameModManger gameManager = FGameModManger.getInstanc();
+
 
     /**
      * Act - tut, was auch immer StartButton tun will. Diese Methode wird
@@ -16,12 +17,12 @@ public class BStartButton extends Actor {
      */
 
     public BStartButton() {
-        this.gameModManger = FGameModManger.getInstanc();
+       
     }
 
     public void act() {
         if (Greenfoot.mouseClicked(this)) {
-            gameModManger.setSaveSelctScreen();
+            gameManager.setSaveSelctScreen();
         }
     }
 }

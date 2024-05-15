@@ -2,16 +2,16 @@ import greenfoot.*;
 
 public class BPauseButton extends Actor {
 
-    private FGameModManger gameModManger;
+    private FGameModManger gameManager = FGameModManger.getInstanc();
+
 
     public BPauseButton() {
-        gameModManger = FGameModManger.getInstanc();
     }
 
     public void act() {
         if (Greenfoot.mouseClicked(this)) {
-            gameModManger.autoSaveGame();
-            gameModManger.setCurrentWorld(4);
+            gameManager.autoSaveGame();
+            gameManager.setCurrentWorld(4);
         }
     }
 }

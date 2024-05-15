@@ -1,4 +1,3 @@
-import bluej.pkgmgr.Project;
 import greenfoot.*;
 
 /**
@@ -7,9 +6,9 @@ import greenfoot.*;
  * @author (your name)
  * @version (a version number or a date)
  */
-public class FGameModManger extends World {
+public class FGameModManger  {
 
-    private static FGameModManger gameModManger;
+    private static FGameModManger instance;
 
     private FCheckFileExistence checkFileExistence = new FCheckFileExistence();
     private FLoadGameConfig loadGameConfig = new FLoadGameConfig();
@@ -34,7 +33,7 @@ public class FGameModManger extends World {
     private int currentWorld;
     private int toworld = 0;
 
-    private static boolean fgameModMangerInstace;
+    private static boolean fgameModMangerInstace = false;
     private boolean isRight;
 
     private String levelName;
@@ -43,33 +42,29 @@ public class FGameModManger extends World {
      * Constructor for objects of class GameModManger
      */
     public FGameModManger() {
-        super(600, 400, 1);
-
         this.log = Logger.getInstance();
         log.call("InitGame", "logger.getInstance() String log wurde die loggerInstance hinzugefügt");
-   
-        log.call("InitGame",
-                " infotext.showText(\"Spiel wird geladen\", this, 300, 200, 24, null, Color.WHITE); wird aufgerufen");
-        infotext.showText("Spiel wird geladen", this, 300, 200, 24, null, Color.WHITE);
         log.log("Game is starting", "green");
         log.call("InitGame", "prepare()");
         gameInit();
   
     }
     public void act() {
+        if(fgameModMangerInstace){
+            Greenfoot.stop();
+        }
     }
-
-    public static FGameModManger getInstanc() {
-        if (gameModManger != null) {
+    public static synchronized FGameModManger getInstanc() {
+        if (instance != null) {
             System.out.println("GameModManger ist schon erstellt");
         } else {
             if (!fgameModMangerInstace) {
-                gameModManger = new FGameModManger();
+                instance = new FGameModManger();
                 fgameModMangerInstace = true;
             }
-            return gameModManger;
+            return instance;
         }
-        return gameModManger;
+        return instance;
     }
 
     public void gameInit() {

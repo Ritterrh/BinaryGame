@@ -17,7 +17,8 @@ public class WGameModeTow extends World {
     private BSaveButton sbutton = new BSaveButton();
     private BPauseButton button = new BPauseButton();
     private BEndGameButton ebutton = new BEndGameButton();
-    public FGameModManger gameModManger = new FGameModManger();
+    FGameModManger gameManager = FGameModManger.getInstanc();
+
     private String level ;
     private String points;
     int setBlockValue = 0;
@@ -35,8 +36,8 @@ public class WGameModeTow extends World {
     }
 
     public void act() {
-         level = String.valueOf(gameModManger.getLevel());
-         points = String.valueOf(gameModManger.getPoints());
+         level = String.valueOf(gameManager.getLevel());
+         points = String.valueOf(gameManager.getPoints());
 
          leveltext.showText("Deine Level: " + level, this, 1010, 10, 24, null, Color.WHITE);
          pointstext.showText("Deine Punkte: " + points, this, 1010, 40, 24, null, Color.WHITE);
