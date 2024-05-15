@@ -1,0 +1,161 @@
+{
+  "main": {
+    "id": "c92f36cc9e033c1c",
+    "type": "split",
+    "children": [
+      {
+        "id": "33929a556b3075f9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "27fed10c81099539",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "Binary Game.canvas",
+                "viewState": {
+                  "x": 1285.225961715347,
+                  "y": 827.6750143335863,
+                  "zoom": -1.333333333333333
+                }
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "eb3fd8a7d75f48bc",
+    "type": "split",
+    "children": [
+      {
+        "id": "ef7e19dd8a29b732",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f1d1d2e761c2fea6",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "ebb8d87eb6c11624",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "105f4284af2b867c",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "c771be3b53bd745d",
+    "type": "split",
+    "children": [
+      {
+        "id": "a3afd825fecb1066",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "517cb5cd4dcb7131",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Binary Game.canvas",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "8d634b1f6b68c6a5",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Binary Game.canvas",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "ff2e25f99d5073eb",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "e5c384feb8b96559",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Binary Game.canvas"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Schnellauswahl öffnen": false,
+      "graph:Graphen-Ansicht öffnen": false,
+      "canvas:Neuen Canvas erstellen": false,
+      "daily-notes:Heutige Notiz öffnen": false,
+      "templates:Vorlage einfügen": false,
+      "command-palette:Befehlspalette öffnen": false
+    }
+  },
+  "active": "27fed10c81099539",
+  "lastOpenFiles": [
+    "Plan.md",
+    "Binary Game.canvas",
+    "2024-05-12.md",
+    "Unbenannt 1.canvas",
+    "Unbenannt.canvas"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+	"nodes":[
+		{"id":"2d779055e630a077","type":"text","text":"World","x":-180,"y":-220,"width":250,"height":60},
+		{"id":"1bc6a6cf5cacebc8","type":"text","text":"initWorld","x":-180,"y":-80,"width":250,"height":60},
+		{"id":"b3b9813388f54bb7","type":"text","text":"Game Config","x":160,"y":-76,"width":250,"height":60},
+		{"id":"37654f6ce6b2c09f","type":"text","text":"Game Stats","x":173,"y":246,"width":250,"height":60},
+		{"id":"8f1ec9c4fb0873aa","type":"text","text":"FirstTimePlay","x":423,"y":360,"width":250,"height":60},
+		{"id":"b17a841667eada00","type":"text","text":"bool","x":673,"y":460,"width":250,"height":60},
+		{"id":"fe703779d4b94d50","type":"text","text":"Load Game save","x":423,"y":580,"width":250,"height":60},
+		{"id":"0dd37ed48a158912","type":"text","text":"True","x":1040,"y":490,"width":250,"height":60},
+		{"id":"135185e6d1ca2940","type":"text","text":"Create Game Save Text","x":1260,"y":580,"width":250,"height":60},
+		{"id":"16da5f3a2ccbd991","type":"text","text":"Start Tutarial //Nicht umbeding nötig","x":1270,"y":675,"width":250,"height":60},
+		{"id":"7a18c410052ad83e","type":"text","text":"Max Game Save = 3","x":1700,"y":580,"width":250,"height":60},
+		{"id":"e2e24ac9683f5bf5","type":"text","text":"Game Save Objekt","x":1700,"y":675,"width":250,"height":60},
+		{"id":"8037431796a58e00","type":"text","text":"{\n\tID = \n\tName = \n\tLastSave =\n\tLevel = \n\tPoints = \n}","x":1920,"y":760,"width":250,"height":220},
+		{"id":"84b4daecab3836da","x":528,"y":14,"width":250,"height":60,"type":"text","text":"IF Exits "},
+		{"id":"9e50334528601eb0","x":892,"y":11,"width":250,"height":60,"type":"text","text":"(True) = GameStats(True)"},
+		{"id":"98c3d210719f3e08","x":892,"y":120,"width":250,"height":60,"type":"text","text":"(False) = Create Game Config"},
+		{"id":"9d590f6e003922e6","x":1192,"y":152,"width":250,"height":94,"type":"text","text":"- Game Name\n- Version"}
+	],
+	"edges":[
+		{"id":"8e976902858207ae","fromNode":"2d779055e630a077","fromSide":"bottom","toNode":"1bc6a6cf5cacebc8","toSide":"top"},
+		{"id":"2dd989f73ef9d6bf","fromNode":"1bc6a6cf5cacebc8","fromSide":"right","toNode":"b3b9813388f54bb7","toSide":"left"},
+		{"id":"2b48b401cb0951c9","fromNode":"1bc6a6cf5cacebc8","fromSide":"right","toNode":"37654f6ce6b2c09f","toSide":"left"},
+		{"id":"92fac30475d0901b","fromNode":"37654f6ce6b2c09f","fromSide":"bottom","toNode":"8f1ec9c4fb0873aa","toSide":"left"},
+		{"id":"76b345233b1ea15d","fromNode":"37654f6ce6b2c09f","fromSide":"bottom","toNode":"fe703779d4b94d50","toSide":"left"},
+		{"id":"6eb551d7860543c6","fromNode":"8f1ec9c4fb0873aa","fromSide":"bottom","toNode":"b17a841667eada00","toSide":"left"},
+		{"id":"43f4459c5873ba32","fromNode":"b17a841667eada00","fromSide":"right","toNode":"0dd37ed48a158912","toSide":"left"},
+		{"id":"c3480401fda76a04","fromNode":"0dd37ed48a158912","fromSide":"bottom","toNode":"135185e6d1ca2940","toSide":"left"},
+		{"id":"9ffa46e5412ed630","fromNode":"0dd37ed48a158912","fromSide":"bottom","toNode":"16da5f3a2ccbd991","toSide":"left"},
+		{"id":"f83998f24a3ae845","fromNode":"135185e6d1ca2940","fromSide":"right","toNode":"7a18c410052ad83e","toSide":"left"},
+		{"id":"3700d37223b2a092","fromNode":"135185e6d1ca2940","fromSide":"right","toNode":"e2e24ac9683f5bf5","toSide":"left"},
+		{"id":"7aaaaf9d2dccf4eb","fromNode":"e2e24ac9683f5bf5","fromSide":"bottom","toNode":"8037431796a58e00","toSide":"left"},
+		{"id":"54ea5a364f5f9c86","fromNode":"b3b9813388f54bb7","fromSide":"right","toNode":"84b4daecab3836da","toSide":"left"},
+		{"id":"5b2d3ec4bd8573aa","fromNode":"84b4daecab3836da","fromSide":"right","toNode":"9e50334528601eb0","toSide":"left"},
+		{"id":"dc301165de7124c5","fromNode":"84b4daecab3836da","fromSide":"right","toNode":"98c3d210719f3e08","toSide":"left"},
+		{"id":"e33ad39dc69b90ed","fromNode":"98c3d210719f3e08","fromSide":"right","toNode":"9d590f6e003922e6","toSide":"left"}
+	]
+}

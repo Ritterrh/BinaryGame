@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.target=LargeElement
+comment1.params=color\ with\ height
+comment1.target=LargeElement(greenfoot.Color,\ int,\ int)
+numComments=2
