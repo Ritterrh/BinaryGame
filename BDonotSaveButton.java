@@ -16,4 +16,5 @@ public class BDonotSaveButton extends Actor
     {
         // Add your action code here.
     }
+    //TODO: implement functionality to not save the game
 }

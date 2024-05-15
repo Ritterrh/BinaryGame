@@ -7,7 +7,7 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot und MouseInfo)
  * @version (eine Versionsnummer oder ein Datum)
  */
 public class BNewGame extends Actor {
-    private GameModManger gameModManger;
+    private FGameModManger gameModManger;
 
     /**
      * Act - tut, was auch immer NewGame tun will. Diese Methode wird aufgerufen,
@@ -15,7 +15,7 @@ public class BNewGame extends Actor {
      */
 
     public BNewGame() {
-        this.gameModManger = GameModManger.getInstance();
+        this.gameModManger = FGameModManger.getInstanc();
     }
 
     public void act() {

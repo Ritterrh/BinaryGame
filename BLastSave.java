@@ -8,10 +8,10 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot und MouseInfo)
  */
 public class BLastSave extends Actor {
 
-    private GameModManger gameModManger;
+    private FGameModManger gameModManger;
 
     public BLastSave() {
-        this.gameModManger = GameModManger.getInstance();
+        this.gameModManger = FGameModManger.getInstanc();
     }
 
     /**
