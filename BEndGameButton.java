@@ -2,7 +2,7 @@ import greenfoot.*;
 
 public class BEndGameButton extends Actor {
 
-    private FGameModManger gameModManger = new FGameModManger();
+    private FGameModManger gameModManger;
 
     public BEndGameButton() {
         gameModManger = FGameModManger.getInstanc();

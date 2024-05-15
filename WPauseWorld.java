@@ -13,11 +13,11 @@ public class WPauseWorld extends World
      * Konstruktor für Objekte der Klasse PauseWorld
      * 
      */
-    public WPauseWorld(World old)
+    public WPauseWorld()
     {    
         // Erstellt eine neue Welt mit 600x400 Zellen und einer Zell-Größe von 1x1 Pixeln.
         super(1200, 900, 1); 
-        this.addObject(new BResumeButton(old), 600, 486);
+        this.addObject(new BResumeButton(), 600, 486);
         
     }
 }

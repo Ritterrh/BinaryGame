@@ -2,7 +2,7 @@ import greenfoot.*;
 
 public class BSaveButton extends Actor {
 
-    private FGameModManger gameModManger = new FGameModManger();
+    private FGameModManger gameModManger;
 
     BSaveButton() {
         gameModManger = FGameModManger.getInstanc();

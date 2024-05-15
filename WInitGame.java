@@ -7,7 +7,6 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 public class WInitGame extends World {
-    private static FGameModManger instance;
     private Logger log;
     private FMessage infotext = new FMessage();
 
@@ -31,6 +30,7 @@ public class WInitGame extends World {
 
     private void prepare() {
         log.call("InitGame", "new GameModManger(); wird aufgerufen");
-        new FGameModManger();
+        FGameModManger.getInstanc();
+
     }
 }

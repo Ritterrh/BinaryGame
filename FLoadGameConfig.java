@@ -1,29 +1,27 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class FLoadGameConfig implements GameConfig {
 
     private int id;
     private String name;
-    private Date version;
+    private int version;
 
     /**
      * Constructor for objects of class LoadGameConfig
      */
     public FLoadGameConfig() {
-        try (BufferedReader reader = new BufferedReader(new FileReader(System.getProperty("user.dir") +"/config/GameConfig.txt"))) {
+        try (BufferedReader reader = new BufferedReader(
+                new FileReader(System.getProperty("user.dir") + "/config/GameConfig.txt"))) {
             String line;
             if ((line = reader.readLine()) != null) {
                 String[] parts = line.split(",");
                 id = Integer.parseInt(parts[0]);
                 name = parts[1];
-                version = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(parts[2]);
+                version = Integer.parseInt(parts[2]);
             }
-        } catch (IOException | ParseException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -35,9 +33,9 @@ public class FLoadGameConfig implements GameConfig {
     private class GameConfigImpl implements GameConfig {
         private int id;
         private String name;
-        private Date version;
+        private int version;
 
-        public GameConfigImpl(int id, String name, Date version) {
+        public GameConfigImpl(int id, String name, int version) {
             this.id = id;
             this.name = name;
             this.version = version;
@@ -51,12 +49,12 @@ public class FLoadGameConfig implements GameConfig {
             return name;
         }
 
-        public Date getVersion() {
+        public int getVersion() {
             return version;
         }
 
         public Object getGameConfig() {
-            return this;
+            return new GameConfigImpl(id, name, version);
         }
     }
 }

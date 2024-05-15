@@ -15,15 +15,15 @@ public class FGameModManger extends Actor {
     private FLoadGameState loadGameState = new FLoadGameState();
     private Logger log = Logger.getInstance();
 
-    private FUpdateGameState updateGameState;
+    private FLoadFromAutoSave loadFromAutoSave;
     private FUpdateAutoSave updateAutoSave;
 
-    private GameModeOne gameModeOne = new GameModeOne();
-    private WGameModeTow gameModeTow = new WGameModeTow();
-    private WStartWelt startWelt = new WStartWelt();
+    private GameModeOne gameModeOne;
+    private WGameModeTow gameModeTow;
+    private WStartWelt startWelt;
     private WPauseWorld pauseWorld;
-    private WSaveSelct saveSelct = new WSaveSelct();
-    private WLoding loding = new WLoding();
+    private WSaveSelct saveSelct;
+    private WLoding loding;
     private WEndWorld endWorld;
 
     private int level;
@@ -32,6 +32,7 @@ public class FGameModManger extends Actor {
     private int currentWorld;
     private int toworld = 0;
 
+    private static boolean fgameModMangerInstace;
     private boolean isRight;
 
     private String levelName;
@@ -40,27 +41,37 @@ public class FGameModManger extends Actor {
      * Constructor for objects of class GameModManger
      */
     public FGameModManger() {
-        gameInit();
+
+    }
+
+    public void act() {
+        if (fgameModMangerInstace) {
+            System.out.println("GameModManger wird gestoppt Irgeendwas ist schief gelaufen");
+            Greenfoot.stop();
+        }
+        if (gameModManger != null) {
+            System.out.println("GameModManger wird gestoppt Irgeendwas ist schief gelaufen");
+            Greenfoot.stop();
+        }
     }
 
     public static FGameModManger getInstanc() {
-        if (gameModManger == null) {
-            gameModManger = new FGameModManger();
+        if (gameModManger != null) {
+            System.out.println("GameModManger ist schon erstellt");
         } else {
+            if (!fgameModMangerInstace) {
+                gameModManger = new FGameModManger();
+                fgameModMangerInstace = true;
+            }
             return gameModManger;
         }
         return gameModManger;
     }
 
     public void gameInit() {
-        setCurrentWorld(7);
-        log.call("GameModManger", " gameinitFinshed(); wird aufgerufen");
-        gameinitFinshed();
-    }
-
-    public void gameinitFinshed() {
         log.call("GameModManger", "setCurrentWorld(1); wird aufgerufen");
         setCurrentWorld(1);
+
     }
 
     public void levelUp() {
@@ -92,7 +103,8 @@ public class FGameModManger extends Actor {
     }
 
     private void startGame() {
-        int gamemode = Greenfoot.getRandomNumber(2);
+       int gamemode = 1;
+        // TODO Game Mode 2 int gamemode = Greenfoot.getRandomNumber(2);
         switch (gamemode) {
             case 1:
                 setGameModeOne();
@@ -119,44 +131,26 @@ public class FGameModManger extends Actor {
     }
 
     public void setCurrentWorld(int CurrentWorld) {
-        if (CurrentWorld == currentWorld) {
-            log.log("Die Angefodertet welt ist schon", "green");
-            return;
-        } else {
-            log.log("Die Welt wird gewechselt", "green");
-            currentWorld = CurrentWorld; // Update currentWorld here
+        if (CurrentWorld == 1) {
+            setLoadingScreen();
         }
-        switch (CurrentWorld) {
-            case 1:
-                setStartScreen();
-                this.toworld = 0;
-                break;
-            case 2:
-                setGameModeOne();
-                this.toworld = 0;
-                break;
-            case 3:
-                setGameModeTow();
-                this.toworld = 0;
-                break;
-            case 4:
-                setPauseScreen();
-                this.toworld = 0;
-                break;
-            case 5:
-                setEndScreen();
-                this.toworld = 0;
-                break;
-            case 6:
-                setSaveSelctScreen();
-                this.toworld = 0;
-                break;
-            case 7:
-                setLoadingScreen();
-                this.toworld = 0;
-                break;
-            default:
-                break;
+        if (CurrentWorld == 2) {
+            setStartScreen();
+        }
+        if (CurrentWorld == 3) {
+            setSaveSelctScreen();
+        }
+        if (CurrentWorld == 4) {
+            setGameModeOne();
+        }
+        if (CurrentWorld == 5) {
+            setGameModeTow();
+        }
+        if (CurrentWorld == 6) {
+            setPauseScreen();
+        }
+        if (CurrentWorld == 67) {
+            setEndScreen();
         }
     }
 
@@ -189,11 +183,18 @@ public class FGameModManger extends Actor {
         }
         return returnWorld;
     }
-    public void autoSaveGame(){
+    public void loadfromAutoSave(){
+        loadFromAutoSave = new FLoadFromAutoSave();
+        setLevel(loadFromAutoSave.getLevel());
+        setPoints(loadFromAutoSave.getPoints());
+        startGame();
+    }
+    public void autoSaveGame() {
         updateAutoSave = new FUpdateAutoSave(getLevelName(), getLevel(), getPoints());
     }
+
     public void saveGame() {
-        updateGameState = new FUpdateGameState(getLevelName(), getLevel(), getPoints());
+        //TODO: Implementierung fehlt
     }
 
     public void setLevelName(String levelName) {
@@ -213,22 +214,22 @@ public class FGameModManger extends Actor {
     }
 
     public void setGameModeTow() {
-        Greenfoot.setWorld(gameModeTow);
+        Greenfoot.setWorld(new WGameModeTow());
         setCurrentWorld(3);
     }
 
     public void setGameModeOne() {
-        Greenfoot.setWorld(gameModeOne);
+        Greenfoot.setWorld(new GameModeOne());
         setCurrentWorld(2);
     }
 
     public void setStartScreen() {
-        Greenfoot.setWorld(startWelt);
+        Greenfoot.setWorld(new WStartWelt());
         setCurrentWorld(1);
     }
 
     public void setPauseScreen() {
-        Greenfoot.setWorld(pauseWorld);
+        Greenfoot.setWorld(new WPauseWorld());
         setCurrentWorld(4);
     }
 
