@@ -10,12 +10,13 @@ public class FGameModManger extends Actor {
 
     private static FGameModManger gameModManger;
 
-
     private FCheckFileExistence checkFileExistence = new FCheckFileExistence();
     private FLoadGameConfig loadGameConfig = new FLoadGameConfig();
     private FLoadGameState loadGameState = new FLoadGameState();
     private Logger log = Logger.getInstance();
 
+    private FUpdateGameState updateGameState;
+    private FUpdateAutoSave updateAutoSave;
 
     private GameModeOne gameModeOne = new GameModeOne();
     private WGameModeTow gameModeTow = new WGameModeTow();
@@ -33,6 +34,8 @@ public class FGameModManger extends Actor {
 
     private boolean isRight;
 
+    private String levelName;
+
     /**
      * Constructor for objects of class GameModManger
      */
@@ -48,6 +51,7 @@ public class FGameModManger extends Actor {
         }
         return gameModManger;
     }
+
     public void gameInit() {
         setCurrentWorld(7);
         log.call("GameModManger", " gameinitFinshed(); wird aufgerufen");
@@ -114,7 +118,7 @@ public class FGameModManger extends Actor {
         startGame();
     }
 
-    private void setCurrentWorld(int CurrentWorld) {
+    public void setCurrentWorld(int CurrentWorld) {
         if (CurrentWorld == currentWorld) {
             log.log("Die Angefodertet welt ist schon", "green");
             return;
@@ -125,7 +129,7 @@ public class FGameModManger extends Actor {
         switch (CurrentWorld) {
             case 1:
                 setStartScreen();
-            this.toworld = 0;
+                this.toworld = 0;
                 break;
             case 2:
                 setGameModeOne();
@@ -155,9 +159,8 @@ public class FGameModManger extends Actor {
                 break;
         }
     }
-    
 
-    private World getCurrentWorld() {
+    public World getCurrentWorld() {
         World returnWorld = null;
         switch (currentWorld) {
             case 1:
@@ -186,25 +189,23 @@ public class FGameModManger extends Actor {
         }
         return returnWorld;
     }
+    public void autoSaveGame(){
+        updateAutoSave = new FUpdateAutoSave(getLevelName(), getLevel(), getPoints());
+    }
+    public void saveGame() {
+        updateGameState = new FUpdateGameState(getLevelName(), getLevel(), getPoints());
+    }
 
-    public int getLevel() {
-        return level;
+    public void setLevelName(String levelName) {
+        this.levelName = levelName;
     }
 
     private void setLevel(int level) {
         this.level = level;
     }
 
-    public int getPoints() {
-        return points;
-    }
-
     private void setPoints(int points) {
         this.points = points;
-    }
-
-    private boolean getIsRight() {
-        return isRight;
     }
 
     private void setIsRight(boolean isRight) {
@@ -244,6 +245,22 @@ public class FGameModManger extends Actor {
     public void setSaveSelctScreen() {
         Greenfoot.setWorld(saveSelct);
         setCurrentWorld(6);
+    }
+
+    public String getLevelName() {
+        return levelName;
+    }
+
+    private boolean getIsRight() {
+        return isRight;
+    }
+
+    public int getPoints() {
+        return points;
+    }
+
+    public int getLevel() {
+        return level;
     }
 
     private World getGameModeTow() {

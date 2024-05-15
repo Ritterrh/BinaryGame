@@ -1,23 +1,17 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot und MouseInfo)
+import greenfoot.*;
 
-/**
- * Ergänzen Sie hier eine Beschreibung für die Klasse PauseButton.
- * 
- * @author (Ihr Name) 
- * @version (eine Versionsnummer oder ein Datum)
- */
-public class BPauseButton extends Actor
-{
-    /**
-     * Act - tut, was auch immer PauseButton tun will. Diese Methode wird aufgerufen, 
-     * sobald der 'Act' oder 'Run' Button in der Umgebung angeklickt werden. 
-     */
-    public void act() 
-    {
-        // Ergänzen Sie Ihren Quelltext hier...
-        if(Greenfoot.mouseClicked(this))
-        {
-            //TODO implement functionality to pause the game
+public class BPauseButton extends Actor {
+
+    private FGameModManger gameModManger;
+
+    public BPauseButton() {
+        gameModManger = FGameModManger.getInstanc();
+    }
+
+    public void act() {
+        if (Greenfoot.mouseClicked(this)) {
+            gameModManger.autoSaveGame();
+            gameModManger.setCurrentWorld(4);
         }
-    }    
+    }
 }

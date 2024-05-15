@@ -15,13 +15,13 @@ import greenfoot.Greenfoot;
  * @author (your name)
  * @version (a version number or a date)
  */
-public class FUpdateGameState {
+public class FUpdateAutoSave {
 
     /**
      * Constructor for objects of class UpdateGameState
      */
     //TODO: Id auto increment int id,
-    public FUpdateGameState(String name,  int level, int points) {
+    public FUpdateAutoSave(String name,  int level, int points) {
         try (BufferedReader reader = new BufferedReader(new FileReader(System.getProperty("user.dir") +"/save/GameSave.txt"))) {
             BufferedWriter writer = new BufferedWriter(new FileWriter(System.getProperty("user.dir") +"/save/GameSave.txt", true));
             String line;

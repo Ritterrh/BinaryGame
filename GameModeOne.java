@@ -15,13 +15,12 @@ public class GameModeOne extends World {
 
     public FGameModManger gameModManger;
 
-
-    private FMessage leveltext =  new FMessage();
-    private FMessage pointstext=  new FMessage();
+    private FMessage leveltext = new FMessage();
+    private FMessage pointstext = new FMessage();
     private BSaveButton sbutton = new BSaveButton();
     private BPauseButton button = new BPauseButton();
     private BEndGameButton ebutton = new BEndGameButton();
-    private String level ;
+    private String level;
     private String points;
     int setBlockValue = 0;
     private List<List<Integer>> nullOderEinsList = new ArrayList<>();
@@ -34,17 +33,17 @@ public class GameModeOne extends World {
     public GameModeOne() {
 
         super(36, 27, 33);
-        this.gameModManger =FGameModManger.getInstanc();
+        this.gameModManger = FGameModManger.getInstanc();
         loadlevel();
         loadGameMode();
     }
 
     public void act() {
-         level = String.valueOf(gameModManger.getLevel());
-         points = String.valueOf(gameModManger.getPoints());
+        level = String.valueOf(gameModManger.getLevel());
+        points = String.valueOf(gameModManger.getPoints());
 
-         leveltext.showText("Deine Level: " + level, this, 1010, 10, 24, null, Color.WHITE);
-         pointstext.showText("Deine Punkte: " + points, this, 1010, 40, 24, null, Color.WHITE);
+        leveltext.showText("Deine Level: " + level, this, 1010, 10, 24, null, Color.WHITE);
+        pointstext.showText("Deine Punkte: " + points, this, 1010, 40, 24, null, Color.WHITE);
 
     }
 
@@ -53,7 +52,6 @@ public class GameModeOne extends World {
         addObject(ebutton, 33, 25);
         addObject(sbutton, 33, 21);
     }
-
 
     public void loadGameMode() {
 
@@ -77,7 +75,6 @@ public class GameModeOne extends World {
         }
 
     }
-
 
     public IBinaryBlockResult getBlockById(int id) {
         return blockMap.get(id);

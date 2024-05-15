@@ -13,11 +13,11 @@ public class WEndWorld extends World
      * Konstruktor für Objekte der Klasse EndWorld
      * 
      */
-    public WEndWorld(World old)
+    public WEndWorld()
     {    
         // Erstellt eine neue Welt mit 600x400 Zellen und einer Zell-Größe von 1x1 Pixeln.
         super(1200, 900, 1);
         this.addObject(new BYesButton(), 550, 496);
-        this.addObject(new BNoButton(old), 650, 496);
+        this.addObject(new BNoButton(), 650, 496);
     }
 }
