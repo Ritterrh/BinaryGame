@@ -20,8 +20,9 @@ public class BEndGameButton extends Actor {
 
     public void act() {
         // Ergänzen Sie Ihren Quelltext hier...
-        if (Greenfoot.mouseClicked(this))
-            Greenfoot.setWorld(new WEndWorld(this.getWorld()));
+        if (Greenfoot.mouseClicked(this)){
+            //TODO implement functionality to end the game 
+        }
     }
 
 }
