@@ -1,28 +1,27 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot und MouseInfo)
+import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot und MouseInfo)
 
 /**
  * Ergänzen Sie hier eine Beschreibung für die Klasse StartButton.
  * 
- * @author (Ihr Name) 
+ * @author (Ihr Name)
  * @version (eine Versionsnummer oder ein Datum)
  */
-public class BStartButton extends Actor
-{
-    private GameModManger gameModManger;
+public class BStartButton extends Actor {
+    private FGameModManger gameModManger;
+
     /**
-     * Act - tut, was auch immer StartButton tun will. Diese Methode wird aufgerufen, 
-     * sobald der 'Act' oder 'Run' Button in der Umgebung angeklickt werden. 
+     * Act - tut, was auch immer StartButton tun will. Diese Methode wird
+     * aufgerufen,
+     * sobald der 'Act' oder 'Run' Button in der Umgebung angeklickt werden.
      */
 
-    public BStartButton(){
-        this.gameModManger = GameModManger.getInstance();
+    public BStartButton() {
+        this.gameModManger = FGameModManger.getInstanc();
     }
-    public void act() 
-    {
-        if (Greenfoot.mouseClicked(this))
-    {   
-        gameModManger.setSaveSelctScreen();
-       
-    }  
-}
+
+    public void act() {
+        if (Greenfoot.mouseClicked(this)) {
+            gameModManger.setSaveSelctScreen();
+        }
+    }
 }

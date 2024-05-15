@@ -21,9 +21,7 @@ public class BSaveButton extends Actor {
 
         if (Greenfoot.mouseClicked(this)) {
             String name = Greenfoot.ask("Gebe deinem Spiel stand einen Namen");
-            ZoneId zoneId = ZoneId.of("Europe/Berlin");
-            LocalDate lastSave = LocalDate.now(zoneId);
-            new  FUpdateGameState(name, lastSave, world.gameModManger.getLevel(), world.gameModManger.getPoints());
+           //TODO: implement functionality to save the game 
         }
     }
 

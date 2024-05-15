@@ -17,9 +17,12 @@ public class BNoButton extends Actor {
         // Ergänzen Sie Ihren Quelltext hier...
         if (Greenfoot.mouseClicked(this)) {
             if (oldWorld == null) {
-
+                //TODO implement go back to the main menu and show error message
             } else
-                Greenfoot.setWorld(oldWorld);
+            {
+            //TODO: implement functionality to go back to the old world (bzw create new world and set the level pointer to the new level)
+
+            }
         }
     }
 }

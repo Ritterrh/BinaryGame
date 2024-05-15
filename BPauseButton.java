@@ -16,6 +16,8 @@ public class BPauseButton extends Actor
     {
         // Ergänzen Sie Ihren Quelltext hier...
         if(Greenfoot.mouseClicked(this))
-        Greenfoot.setWorld(new WPauseWorld(this.getWorld()));
+        {
+            //TODO implement functionality to pause the game
+        }
     }    
 }
