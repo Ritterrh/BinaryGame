@@ -1,7 +1,0 @@
-#BlueJ class context
-comment0.target=SaveSelct
-comment0.text=\r\n\ Erg\u00E4nzen\ Sie\ hier\ eine\ Beschreibung\ f\u00FCr\ die\ Klasse\ SaveSelct.\r\n\ \r\n\ @author\ (Ihr\ Name)\ \r\n\ @version\ (eine\ Versionsnummer\ oder\ ein\ Datum)\r\n
-comment1.params=world
-comment1.target=SaveSelct(BasedGame)
-comment1.text=\r\n\ Konstruktor\ f\u00FCr\ Objekte\ der\ Klasse\ SaveSelct\r\n\ \r\n
-numComments=2

@@ -2,14 +2,14 @@ import java.util.Date;
 
 public class GaneSaveManger {
 
-    private LoadGameState gameState;
+    private FLoadGameState gameState;
 
     /**
      * Constructor for objects of class GaneSaveManger
      */
     public GaneSaveManger() {
         // Spielzustand laden
-        gameState = new LoadGameState();
+        gameState = new FLoadGameState();
 
 
         // Auf Spielzustandsdaten zugreifen und anzeigen

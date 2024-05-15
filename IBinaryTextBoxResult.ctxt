@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=BinaryTextBoxResult
+comment1.params=world\ row\ col
+comment1.target=BinaryTextBoxResult(greenfoot.World,\ int,\ int)
+comment2.params=
+comment2.target=void\ act()
+comment3.params=newText
+comment3.target=void\ updateText(java.lang.String)
+numComments=4

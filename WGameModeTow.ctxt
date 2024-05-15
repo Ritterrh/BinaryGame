@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=GameModeTow
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ GameModeTow\ here.\r\n\ \r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=GameModeTow()
+comment1.text=\r\n\ Konstruktor\ f\u00FCr\ Objekte\ der\ Klasse\ BinaryWorld\r\n\ \r\n
+comment10.params=row\ col\ color
+comment10.target=void\ removeAllObjectsInRow(int,\ int,\ greenfoot.Color)
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ loadlevel()
+comment4.params=
+comment4.target=void\ GameModeOne()
+comment5.params=
+comment5.target=void\ GameModeTow()
+comment6.params=id
+comment6.target=BinaryBlockResult\ getBlockById(int)
+comment7.params=row
+comment7.target=int\ calculateDecimalForRow(java.util.List)
+comment8.params=
+comment8.target=int[]\ calculateDecimalForAllRows()
+comment9.params=userInput\ rowIndex
+comment9.target=boolean\ checkUserInput(int,\ int)
+numComments=11
