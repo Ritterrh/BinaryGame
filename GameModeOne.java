@@ -20,9 +20,10 @@ public class GameModeOne extends World {
     private BSaveButton sbutton = new BSaveButton();
     private BPauseButton button = new BPauseButton();
     private BEndGameButton ebutton = new BEndGameButton();
-    private String level;
-    private String points;
-    int setBlockValue = 0;
+
+    private int setBlockValue = 0;
+
+
     private List<List<Integer>> nullOderEinsList = new ArrayList<>();
     private HashMap<Integer, IBinaryBlockResult> blockMap;
 
@@ -39,12 +40,8 @@ public class GameModeOne extends World {
     }
 
     public void act() {
-        level = String.valueOf(gameModManger.getLevel());
-        points = String.valueOf(gameModManger.getPoints());
-
-        leveltext.showText("Deine Level: " + level, this, 1010, 10, 24, null, Color.WHITE);
-        pointstext.showText("Deine Punkte: " + points, this, 1010, 40, 24, null, Color.WHITE);
-
+        leveltext.showText("Deine Level: " + gameModManger.getLevel(), this, 1010, 10, 24, null, Color.WHITE);
+        pointstext.showText("Deine Punkte: " + gameModManger.getPoints(), this, 1010, 40, 24, null, Color.WHITE);
     }
 
     public void loadlevel() {
@@ -105,7 +102,6 @@ public class GameModeOne extends World {
         int[] decimalArray = calculateDecimalForAllRows();
         if (rowIndex >= 0 && rowIndex < decimalArray.length) {
             int correctDecimal = decimalArray[rowIndex];
-            System.out.println("Correct Decimal" + correctDecimal);
             return userInput == correctDecimal;
         }
 
