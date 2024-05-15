@@ -11,7 +11,7 @@ public class FGameModManger extends Actor {
     private static FGameModManger gameModManger;
 
 
-    private CheckFileExistence checkFileExistence = new CheckFileExistence();
+    private FCheckFileExistence checkFileExistence = new FCheckFileExistence();
     private FLoadGameConfig loadGameConfig = new FLoadGameConfig();
     private FLoadGameState loadGameState = new FLoadGameState();
     private Logger log = Logger.getInstance();
@@ -23,7 +23,7 @@ public class FGameModManger extends Actor {
     private WPauseWorld pauseWorld;
     private WSaveSelct saveSelct = new WSaveSelct();
     private WLoding loding = new WLoding();
-    private EndWorld endWorld;
+    private WEndWorld endWorld;
 
     private int level;
     private int points;

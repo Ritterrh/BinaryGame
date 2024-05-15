@@ -17,7 +17,7 @@ public class BYesButton extends Actor
         
     if(Greenfoot.mouseClicked(this))
         {
-                Greenfoot.setWorld(new WStartWelt());
+            
         }
     }    
 }

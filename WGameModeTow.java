@@ -16,13 +16,13 @@ public class WGameModeTow extends World {
     private FMessage pointstext=  new FMessage();
     private BSaveButton sbutton = new BSaveButton();
     private BPauseButton button = new BPauseButton();
-    private EndGameButton ebutton = new EndGameButton();
-    public GameModManger gameModManger = new GameModManger();
+    private BEndGameButton ebutton = new BEndGameButton();
+    public FGameModManger gameModManger = new FGameModManger();
     private String level ;
     private String points;
     int setBlockValue = 0;
     private List<List<Integer>> nullOderEinsList = new ArrayList<>();
-    private HashMap<Integer, BinaryBlockResult> blockMap;
+    private HashMap<Integer, IBinaryBlockResult> blockMap;
 
     /**
      * Konstruktor für Objekte der Klasse BinaryWorld
@@ -31,6 +31,7 @@ public class WGameModeTow extends World {
     public WGameModeTow() {
         super(36, 27, 33);
         loadlevel();
+        loadGameMode();
     }
 
     public void act() {
@@ -49,42 +50,15 @@ public class WGameModeTow extends World {
     }
 
 
-    public void GameModeOne() {
-
-        for (int row = 1; row < 8; row++) {
-
-            List<Integer> nullOderEinsRow = new ArrayList<>();
-
-            for (int col = 0; col < 8; col++) {
-
-                BinaryBlockResult block;
-                block = new BinaryBlockResult(this);
-                block.setNullOderEins(Greenfoot.getRandomNumber(2));
-                addObject(block, col * 3 + 1, row * 3 + 1);
-
-                BinaryTextBoxResult buton = new BinaryTextBoxResult(this, row, col);
-                addObject(buton, 26, row * 3 + 1);
-
-                nullOderEinsRow.add(block.getNullOderEins());
-              //  System.out.println("NullOderEinsRow" + nullOderEinsRow);
-            }
-            nullOderEinsList.add(nullOderEinsRow);
-          //  System.out.println("NullOderEinsList" + nullOderEinsList);
-        }
-
-    }
-
-    public void GameModeTow() {
+    public void loadGameMode() {
         for (int row = 1; row < 8; row++) {
             for (int col = 0; col < 8; col++) {
-
-               //   System.out.println("Block Id" + id + "Set Block Value" + setBlockValue);
                 IBinaryBlock block;
                 int sollwert = Greenfoot.getRandomNumber(2);
                 int istwert = Greenfoot.getRandomNumber(2);
                 block = new IBinaryBlock(setBlockValue, sollwert, istwert);
                 addObject(block, col * 3 + 1, row * 3 + 1);
-                BinaryTextResult buton = new BinaryTextResult();
+                IBinaryTextResult buton = new IBinaryTextResult();
                 addObject(buton, 26, row * 3 + 1);
 
             }
@@ -92,7 +66,7 @@ public class WGameModeTow extends World {
 
     }
 
-    public BinaryBlockResult getBlockById(int id) {
+    public IBinaryBlockResult getBlockById(int id) {
         return blockMap.get(id);
     }
 
