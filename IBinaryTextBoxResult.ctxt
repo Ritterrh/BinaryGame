@@ -1,7 +1,7 @@
 #BlueJ class context
-comment0.target=BinaryTextBoxResult
+comment0.target=IBinaryTextBoxResult
 comment1.params=world\ row\ col
-comment1.target=BinaryTextBoxResult(greenfoot.World,\ int,\ int)
+comment1.target=IBinaryTextBoxResult(greenfoot.World,\ int,\ int)
 comment2.params=
 comment2.target=void\ act()
 comment3.params=newText

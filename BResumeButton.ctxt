@@ -1,8 +1,8 @@
 #BlueJ class context
-comment0.target=ResumeButton
-comment0.text=\r\n\ Erg\u00E4nzen\ Sie\ hier\ eine\ Beschreibung\ f\u00FCr\ die\ Klasse\ ResumeButton.\r\n\ \r\n\ @author\ (Ihr\ Name)\ \r\n\ @version\ (eine\ Versionsnummer\ oder\ ein\ Datum)\r\n
+comment0.target=BResumeButton
+comment0.text=\r\n\ Erg\u00E4nzen\ Sie\ hier\ eine\ Beschreibung\ f\u00FCr\ die\ Klasse\ ResumeButton.\r\n\ \r\n\ @author\ (Ihr\ Name)\r\n\ @version\ (eine\ Versionsnummer\ oder\ ein\ Datum)\r\n
 comment1.params=old
-comment1.target=ResumeButton(greenfoot.World)
+comment1.target=BResumeButton(greenfoot.World)
 comment2.params=
 comment2.target=void\ act()
 numComments=3
