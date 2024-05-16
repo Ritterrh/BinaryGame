@@ -1,7 +1,7 @@
 import greenfoot.*;
 
 public class BNoButton extends Actor {
-    FGameModManger gameManager = FGameModManger.getInstanc();
+    FGameModManger gameManager = FGameModManger.getInstance();
 
 
     BNoButton() {

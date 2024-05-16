@@ -21,9 +21,9 @@ public class FUpdateAutoSave {
      * Constructor for objects of class UpdateGameState
      */
     //TODO: Id auto increment int id,
-    public FUpdateAutoSave(String name,  int level, int points) {
-        try (BufferedReader reader = new BufferedReader(new FileReader(System.getProperty("user.dir") +"/save/GameSave.txt"))) {
-            BufferedWriter writer = new BufferedWriter(new FileWriter(System.getProperty("user.dir") +"/save/GameSave.txt", true));
+    public FUpdateAutoSave( int level, int points) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(System.getProperty("user.dir") +"/save/GameAutoSave.txt"))) {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(System.getProperty("user.dir") +"/save/GameAutoSave.txt", true));
             String line;
             boolean isEmpty = true;
 
@@ -40,9 +40,7 @@ public class FUpdateAutoSave {
                 writer.newLine();
             }
 
-            Instant date = Instant.now();
-
-            String gameStateString = name + "," + date + "," + level + "," + points;
+            String gameStateString = level + "," + points;
             writer.write(gameStateString);
 
             writer.close();

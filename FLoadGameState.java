@@ -22,15 +22,10 @@ public class FLoadGameState {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] parts = line.split(",");
-               // id = Integer.parseInt(parts[0]);
                 name = parts[0];
-             //     System.out.println(name);
-                lastSave = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(parts[1]);
-              //    System.out.println(lastSave);
+                lastSave = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(parts[1]);;
                 level = Integer.parseInt(parts[2]);
-             //     System.out.println(level);
                 points = Integer.parseInt(parts[3]);
-            //      System.out.println(points);
             }
         } catch (IOException | ParseException e) {
             e.printStackTrace();

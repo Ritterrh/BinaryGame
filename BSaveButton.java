@@ -2,11 +2,12 @@ import greenfoot.*;
 
 public class BSaveButton extends Actor {
 
-    private FGameModManger gameManager = FGameModManger.getInstanc();
+     FGameModManger gameManager = FGameModManger.getInstance();
 
 
     BSaveButton() {
-    
+        GreenfootImage backround = gameManager.getImage("images/Speichern.jpg");
+        setImage(backround);
     }
 
     public void act() {

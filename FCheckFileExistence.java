@@ -17,7 +17,6 @@ public class FCheckFileExistence
     public boolean checkFileExistence(String fileName, String filePath)
     {
         java.io.File file = new java.io.File(System.getProperty("user.dir") + "/" + filePath + fileName);
-       //   System.out.println(file + " exists: " + file.exists());
         return file.exists();
     }
 

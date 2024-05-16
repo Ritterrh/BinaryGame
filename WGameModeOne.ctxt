@@ -1,8 +1,8 @@
 #BlueJ class context
-comment0.target=WGameModeTow
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ GameModeTow\ here.\r\n\ \r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.target=WGameModeOne
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ GameModeOne\ here.\r\n\ \r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
-comment1.target=WGameModeTow()
+comment1.target=WGameModeOne()
 comment1.text=\r\n\ Konstruktor\ f\u00FCr\ Objekte\ der\ Klasse\ BinaryWorld\r\n\ \r\n
 comment2.params=
 comment2.target=void\ act()
@@ -15,7 +15,7 @@ comment5.target=int\ calculateDecimalForRow(java.util.List)
 comment6.params=
 comment6.target=int[]\ calculateDecimalForAllRows()
 comment7.params=userInput\ rowIndex
-comment7.target=boolean\ checkUserInput(int,\ int)
+comment7.target=boolean\ checkUserInputGameModeOne(int,\ int)
 comment8.params=row\ col\ color
 comment8.target=void\ removeAllObjectsInRow(int,\ int,\ greenfoot.Color)
 numComments=9

@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot und MouseInfo)
 public class WPauseWorld extends World
 {
 
+    private FGameModManger gameManager = FGameModManger.getInstance();
     /**
      * Konstruktor für Objekte der Klasse PauseWorld
      * 
@@ -17,6 +18,8 @@ public class WPauseWorld extends World
     {    
         // Erstellt eine neue Welt mit 600x400 Zellen und einer Zell-Größe von 1x1 Pixeln.
         super(1200, 900, 1); 
+        GreenfootImage background = gameManager.getImage("images/PauseWelt.jpg");
+        setBackground(background);
         this.addObject(new BResumeButton(), 600, 486);
         
     }

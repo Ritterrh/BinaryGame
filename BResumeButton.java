@@ -7,9 +7,11 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot und MouseInfo)
  * @version (eine Versionsnummer oder ein Datum)
  */
 public class BResumeButton extends Actor {
-   private  FGameModManger gameManager = FGameModManger.getInstanc();
+    FGameModManger gameManager = FGameModManger.getInstance();
 
     public BResumeButton() {
+        GreenfootImage backround = gameManager.getImage("images/Resume.jpg");
+        setImage(backround);
     }
 
     public void act() {

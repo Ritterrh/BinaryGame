@@ -9,7 +9,7 @@ public class IBinaryTextBoxResult extends Actor {
     private int row;
     private int col;
     private World world;
-    FGameModManger gameManager = FGameModManger.getInstanc();
+    FGameModManger gameManager = FGameModManger.getInstance();
 
 
 
@@ -27,8 +27,6 @@ public class IBinaryTextBoxResult extends Actor {
             eingabe = Greenfoot.ask("Bitte gebe die Dezimalzahl ein: ");
             if (!eingabe.isEmpty()) {
                 this.vaules = Integer.parseInt(eingabe);
-             //     System.out.println("Eingabe" + vaules);
-              //    System.out.println("Row" + row);
                  gameManager.checkInputGameModeOne(vaules, row, col);
                 updateText(eingabe);
             }

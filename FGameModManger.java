@@ -6,7 +6,7 @@ import greenfoot.*;
  * @author (your name)
  * @version (a version number or a date)
  */
-public class FGameModManger  {
+public  class FGameModManger  {
 
     private static FGameModManger instance;
 
@@ -19,7 +19,7 @@ public class FGameModManger  {
     private FLoadFromAutoSave loadFromAutoSave;
     private FUpdateAutoSave updateAutoSave;
 
-    private GameModeOne gameModeOne;
+    private WGameModeOne gameModeOne;
     private WGameModeTow gameModeTow;
     private WStartWelt startWelt;
     private WPauseWorld pauseWorld;
@@ -27,7 +27,7 @@ public class FGameModManger  {
     private WLoding loding;
     private WEndWorld endWorld;
 
-    private int level;
+    private int level = 0;
     private int points;
     private int levelstat;
     private int currentWorld;
@@ -41,38 +41,26 @@ public class FGameModManger  {
     /**
      * Constructor for objects of class GameModManger
      */
-    public FGameModManger() {
-        this.log = Logger.getInstance();
-        log.call("InitGame", "logger.getInstance() String log wurde die loggerInstance hinzugefügt");
-        log.log("Game is starting", "green");
-        log.call("InitGame", "prepare()");
-        gameInit();
+    private FGameModManger() {
   
     }
     public void act() {
-        if(fgameModMangerInstace){
-            Greenfoot.stop();
-        }
+        
     }
-    public static synchronized FGameModManger getInstanc() {
-        if (instance != null) {
-            System.out.println("GameModManger ist schon erstellt");
-        } else {
-            if (!fgameModMangerInstace) {
-                instance = new FGameModManger();
-                fgameModMangerInstace = true;
-            }
-            return instance;
-        }
+    public static FGameModManger getInstance() {
+        if(instance == null){
+            instance = new FGameModManger();
+        }   
         return instance;
     }
 
+  
     public void gameInit() {
         log.call("GameModManger", "setCurrentWorld(1); wird aufgerufen");
-        setStartScreen();
-
+        setCurrentWorld(2);
     }
 
+    
     public void levelUp() {
         if (getIsRight()) {
             this.levelstat++;
@@ -120,6 +108,8 @@ public class FGameModManger  {
     public void loadfromSave() {
         setLevel(loadGameState.getLevel());
         setPoints(loadGameState.getPoints());
+        System.out.println(getLevel());
+        System.out.println(getPoints());
         startGame();
     }
 
@@ -131,6 +121,7 @@ public class FGameModManger  {
 
     public void setCurrentWorld(int CurrentWorld) {
         if (CurrentWorld == 1) {
+            log.call("setCurrentWorld", "setStartScreen() wird aufgerufen");
             setLoadingScreen();
         }
         if (CurrentWorld == 2) {
@@ -189,7 +180,8 @@ public class FGameModManger  {
         startGame();
     }
     public void autoSaveGame() {
-        updateAutoSave = new FUpdateAutoSave(getLevelName(), getLevel(), getPoints());
+        log.call(levelName, levelName);
+        updateAutoSave = new FUpdateAutoSave(this.getLevel(), this.getPoints());
     }
 
     public void saveGame() {
@@ -200,12 +192,12 @@ public class FGameModManger  {
         this.levelName = levelName;
     }
 
-    private void setLevel(int level) {
-        this.level = level;
+    private void setLevel(int l) {
+        level = l;
     }
 
-    private void setPoints(int points) {
-        this.points = points;
+    private void setPoints(int p) {
+        points = p;
     }
 
     private void setIsRight(boolean isRight) {
@@ -218,7 +210,7 @@ public class FGameModManger  {
     }
 
     public void setGameModeOne() {
-        Greenfoot.setWorld(new GameModeOne());
+        Greenfoot.setWorld(new WGameModeOne());
 
     }
 
@@ -245,6 +237,11 @@ public class FGameModManger  {
     public void setSaveSelctScreen() {
         Greenfoot.setWorld(new WSaveSelct());
 
+    }
+    
+    public GreenfootImage getImage(String path){
+        GreenfootImage image = new GreenfootImage(path);
+        return image;  
     }
 
     public String getLevelName() {
@@ -290,5 +287,6 @@ public class FGameModManger  {
     private World getSaveSelcetWorld() {
         return saveSelct;
     }
+
 
 }

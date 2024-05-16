@@ -2,16 +2,18 @@ import greenfoot.*;
 
 public class BPauseButton extends Actor {
 
-    private FGameModManger gameManager = FGameModManger.getInstanc();
+     FGameModManger gameManager = FGameModManger.getInstance();
 
 
     public BPauseButton() {
+        GreenfootImage backround = gameManager.getImage("images/Pause.jpg");
+        setImage(backround);
     }
 
     public void act() {
         if (Greenfoot.mouseClicked(this)) {
             gameManager.autoSaveGame();
-            gameManager.setCurrentWorld(4);
+            gameManager.setCurrentWorld(6);
         }
     }
 }

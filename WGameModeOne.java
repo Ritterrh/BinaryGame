@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+ // Import the IFGameModManager class
 
 /**
  * Write a description of class GameModeOne here.
@@ -11,11 +12,10 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name)
  * @version (a version number or a date)
  */
-public class GameModeOne extends World {
+public class WGameModeOne extends  World   {
 
-    FGameModManger gameManager = FGameModManger.getInstanc();
-
-
+     FGameModManger gameManager = FGameModManger.getInstance();
+    
     private FMessage leveltext = new FMessage();
     private FMessage pointstext = new FMessage();
     private BSaveButton sbutton = new BSaveButton();
@@ -32,7 +32,7 @@ public class GameModeOne extends World {
      * Konstruktor für Objekte der Klasse BinaryWorld
      * 
      */
-    public GameModeOne() {
+    public WGameModeOne() {
 
         super(36, 27, 33);
         

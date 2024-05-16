@@ -8,11 +8,12 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot und MouseInfo)
  */
 public class BLastSave extends Actor {
 
-    FGameModManger gameManager = FGameModManger.getInstanc();
+    FGameModManger gameManager = FGameModManger.getInstance();
 
 
     public BLastSave() {
-        
+        GreenfootImage backround  = gameManager.getImage("images/LetztSpielLaden.jpg");
+        setImage(backround);
     }
 
     /**

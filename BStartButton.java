@@ -7,7 +7,7 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot und MouseInfo)
  * @version (eine Versionsnummer oder ein Datum)
  */
 public class BStartButton extends Actor {
-    FGameModManger gameManager = FGameModManger.getInstanc();
+    FGameModManger gameManager = FGameModManger.getInstance();
 
 
     /**
@@ -17,7 +17,8 @@ public class BStartButton extends Actor {
      */
 
     public BStartButton() {
-       
+        GreenfootImage backround  = gameManager.getImage("images/Start.jpg");
+        setImage(backround);
     }
 
     public void act() {

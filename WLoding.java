@@ -16,6 +16,8 @@ public class WLoding extends World
     public WLoding()
     {    
         super(474, 138, 1); 
+        GreenfootImage backround = new GreenfootImage("images/Loding.jpg");
+        setBackground(backround);
     }
 
 }

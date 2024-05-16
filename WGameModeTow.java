@@ -17,13 +17,13 @@ public class WGameModeTow extends World {
     private BSaveButton sbutton = new BSaveButton();
     private BPauseButton button = new BPauseButton();
     private BEndGameButton ebutton = new BEndGameButton();
-    FGameModManger gameManager = FGameModManger.getInstanc();
+    FGameModManger gameManager = FGameModManger.getInstance();
 
     private String level ;
     private String points;
     int setBlockValue = 0;
     private List<List<Integer>> nullOderEinsList = new ArrayList<>();
-    private HashMap<Integer, IBinaryBlockResult> blockMap;
+ 
 
     /**
      * Konstruktor für Objekte der Klasse BinaryWorld
@@ -67,9 +67,7 @@ public class WGameModeTow extends World {
 
     }
 
-    public IBinaryBlockResult getBlockById(int id) {
-        return blockMap.get(id);
-    }
+
 
     public int calculateDecimalForRow(List<Integer> row) {
         int decimal = 0;
