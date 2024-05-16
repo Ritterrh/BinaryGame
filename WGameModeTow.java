@@ -13,6 +13,7 @@ public class WGameModeTow extends World {
     private BPauseButton button = new BPauseButton();
     private BEndGameButton ebutton = new BEndGameButton();
     private FGameModManger gameManager = FGameModManger.getInstance();
+    private boolean allRowsCorrect = false; // Flag to track if all rows are correct
 
     public WGameModeTow() {
         super(36, 27, 33);
@@ -38,19 +39,28 @@ public class WGameModeTow extends World {
                     isRowCorrect = false;
                     block.setColor(istState == 1 ? Color.ORANGE : Color.BLUE);
                 } else {
+                    blockCorrcet();
                     block.setColor(Color.GREEN);
                 }
             }
-            if (isRowCorrect) {
-                rowCorrectAction(row);
+            if (isRowCorrect && !allRowsCorrect) {
+            
             }
+        }
+        if (checkAllRowsCorrect() && !allRowsCorrect) {
+            allRowsCorrect = true;
+            allRowsCorrectAction();
         }
     }
 
     // Method to be called when all blocks in a row are correct
-    private void rowCorrectAction(int row) {
-        // Do whatever action you want when a row is correct
-        System.out.println("Row " + row + " is correct!");
+    private void  blockCorrcet() {
+        gameManager.rowCommplet();
+    }
+
+    // Method to be called when all rows are correct
+    private void allRowsCorrectAction() {
+        gameManager.allRowComplett();
     }
 
     private void loadLevel() {
@@ -77,7 +87,7 @@ public class WGameModeTow extends World {
                 istRow.add(randomState);
                 block.setStates(randomState, sollState);
                 binaryRow.add(block);
-                addObject(block, col * 3 + 1, row * 3 + 1);
+                addObject(block, col * 3 + 1, row * 3 + 3);
             }
 
             // Add binaryRow, sollRow, istRow to respective lists
@@ -88,7 +98,28 @@ public class WGameModeTow extends World {
             // Display the decimal value for the row
             IBinaryTextBoxResult textBox = new IBinaryTextBoxResult(row, 8, 2);
             textBox.setDecimal(decimalForRow);
-            addObject(textBox, 26, row * 3 + 1);
+            addObject(textBox, 26, row * 3 + 3);
         }
+    }
+
+    // Method to check if all rows are correct
+    private boolean checkAllRowsCorrect() {
+        for (int row = 0; row < binaryGrid.size(); row++) {
+            List<BinaryBlock> binaryRow = binaryGrid.get(row);
+            boolean isRowCorrect = true;
+            for (int col = 0; col < binaryRow.size(); col++) {
+                BinaryBlock block = binaryRow.get(col);
+                int sollState = sollStates.get(row).get(col);
+                int istState = block.getIstState();
+                if (sollState != istState) {
+                    isRowCorrect = false;
+                    break; // If any block in the row is incorrect, stop checking the row
+                }
+            }
+            if (!isRowCorrect) {
+                return false; // If any row is incorrect, return false
+            }
+        }
+        return true; // If all rows are correct, return true
     }
 }

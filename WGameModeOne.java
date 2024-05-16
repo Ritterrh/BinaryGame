@@ -46,6 +46,8 @@ public class WGameModeOne extends  World   {
     }
 
     public void loadlevel() {
+        GreenfootImage background = new GreenfootImage("images/BinaryWorld_1200x900.jpg");
+        setBackground(background);
         addObject(button, 33, 23);
         addObject(ebutton, 33, 25);
         addObject(sbutton, 33, 21);
@@ -103,6 +105,7 @@ public class WGameModeOne extends  World   {
         int[] decimalArray = calculateDecimalForAllRows();
         if (rowIndex >= 0 && rowIndex < decimalArray.length) {
             int correctDecimal = decimalArray[rowIndex];
+            System.out.println("Correct decimal for row " + rowIndex + ": " + correctDecimal);
             return userInput == correctDecimal;
         }
 
@@ -115,4 +118,5 @@ public class WGameModeOne extends  World   {
         addObject(largeElement, col * 3 - 100, row * 3 + 1);
     }
 
+  
 }

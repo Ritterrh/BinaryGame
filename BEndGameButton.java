@@ -14,7 +14,7 @@ public class BEndGameButton extends Actor {
     public void act() {
         if (Greenfoot.mouseClicked(this)) {
             gameManager.autoSaveGame();
-            gameManager.setCurrentWorld(5);
+            gameManager.setCurrentWorld(7);
         }
     }
 

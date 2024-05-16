@@ -10,9 +10,8 @@ public class BLastSave extends Actor {
 
     FGameModManger gameManager = FGameModManger.getInstance();
 
-
     public BLastSave() {
-        GreenfootImage backround  = gameManager.getImage("images/LetztSpielLaden.jpg");
+        GreenfootImage backround = gameManager.getImage("images/LetztSpielLaden.jpg");
         setImage(backround);
     }
 
@@ -23,7 +22,7 @@ public class BLastSave extends Actor {
 
     public void act() {
         if (Greenfoot.mouseClicked(this)) {
-            gameManager.loadfromSave();
+            gameManager.loadfromAutoSave();
         }
     }
 }

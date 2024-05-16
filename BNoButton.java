@@ -5,16 +5,13 @@ public class BNoButton extends Actor {
 
 
     BNoButton() {
-        
+        GreenfootImage backround = new GreenfootImage("images/EndeNoButton.jpg");
+        setImage(backround);
     }
 
     public void act() {
         if (Greenfoot.mouseClicked(this)) {
-            if (gameManager.getCurrentWorld() == null) {
-                // TODO implement go back to the main menu and show error message
-            } else {
-                gameManager.setCurrentWorld(1);
-            }
+            gameManager.loadfromAutoSave();
         }
     }
 }
