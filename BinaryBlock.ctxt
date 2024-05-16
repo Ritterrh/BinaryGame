@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=BinaryBlock
+comment1.params=
+comment1.target=BinaryBlock()
+comment2.params=istState\ sollState
+comment2.target=void\ setStates(int,\ int)
+comment3.params=
+comment3.target=boolean\ isCorrectState()
+comment4.params=
+comment4.target=void\ updateColor()
+comment5.params=state
+comment5.target=void\ setIstState(int)
+comment6.params=
+comment6.target=int\ getIstState()
+comment7.params=
+comment7.target=int\ getSollState()
+comment8.params=green
+comment8.target=void\ setColor(greenfoot.Color)
+numComments=9

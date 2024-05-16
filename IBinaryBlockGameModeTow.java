@@ -89,6 +89,11 @@ public class IBinaryBlockGameModeTow extends Actor {
 
     public void setWert(int wert) {
         this.SollWert = wert;
+        this.Wert = wert; // Update the Wert property as well
+        if (this.Wert == 0) {
+            setImage(ImageNull);
+        } else {
+            setImage(ImageEins);
+        }
     }
-
 }
