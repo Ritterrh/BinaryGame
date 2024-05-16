@@ -10,11 +10,9 @@ public  class FGameModManger  {
 
     private static FGameModManger instance;
 
-    private FCheckFileExistence checkFileExistence = new FCheckFileExistence();
-    private FLoadGameConfig loadGameConfig = new FLoadGameConfig();
+
     private FLoadGameState loadGameState = new FLoadGameState();
     private Logger log = Logger.getInstance();
-    private FMessage infotext = new FMessage();
 
     private FLoadFromAutoSave loadFromAutoSave;
     private FUpdateAutoSave updateAutoSave;
@@ -31,12 +29,15 @@ public  class FGameModManger  {
     private int points;
     private int levelstat;
     private int currentWorld;
-    private int toworld = 0;
 
-    private static boolean fgameModMangerInstace = false;
+    int gamemode = 2;
     private boolean isRight;
+    private boolean GameModeTowisRight;
 
     private String levelName;
+
+
+    private int decimal;
 
     /**
      * Constructor for objects of class GameModManger
@@ -90,7 +91,7 @@ public  class FGameModManger  {
     }
 
     private void startGame() {
-       int gamemode = 1;
+      
         // TODO Game Mode 2 int gamemode = Greenfoot.getRandomNumber(2);
         switch (gamemode) {
             case 1:
@@ -103,6 +104,9 @@ public  class FGameModManger  {
                 setGameModeOne();
                 break;
         }
+    }
+    public int getGameMode() {
+        return  gamemode;
     }
 
     public void loadfromSave() {
@@ -238,12 +242,23 @@ public  class FGameModManger  {
         Greenfoot.setWorld(new WSaveSelct());
 
     }
-    
+    public void setGameModeTowisRight(boolean GameModeTowisRight) {
+        this.GameModeTowisRight = GameModeTowisRight;
+    }
+    public void setDecimal(int decimal){
+        this.decimal = decimal;
+    }
+    public int getDecimal(){
+        return decimal;
+    }
+    public boolean getGameModeTowisRight() {
+        return GameModeTowisRight;
+    }
     public GreenfootImage getImage(String path){
         GreenfootImage image = new GreenfootImage(path);
         return image;  
     }
-
+    
     public String getLevelName() {
         return levelName;
     }

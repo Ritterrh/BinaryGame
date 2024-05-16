@@ -2,35 +2,57 @@ import greenfoot.*;
 
 public class IBinaryTextBoxResult extends Actor {
 
-    private GreenfootImage image; 
+    private GreenfootImage image;
 
     private String eingabe;
     private int vaules;
     private int row;
     private int col;
-    private World world;
+    private int gameMode;
+    private int decimal;
     FGameModManger gameManager = FGameModManger.getInstance();
 
-
-
-    public IBinaryTextBoxResult(World world, int row, int col) {
+    public IBinaryTextBoxResult(int row, int col, int gm) {
+        this.gameMode = gm;
         this.col = col;
         this.row = row;
-        this.world = world;
 
         image = new GreenfootImage("BinaryTextBoxResult.jpg");
-        updateText("Deine Eingabe");
+        switch (gameMode) {
+            case 1:
+                updateText("Deine Eingabe");
+                break;
+            case 2:
+                updateText(String.valueOf(decimal));
+                break;
+            default:
+                break;
+        }
     }
 
     public void act() {
-        if (Greenfoot.mouseClicked(this)) {
-            eingabe = Greenfoot.ask("Bitte gebe die Dezimalzahl ein: ");
-            if (!eingabe.isEmpty()) {
-                this.vaules = Integer.parseInt(eingabe);
-                 gameManager.checkInputGameModeOne(vaules, row, col);
-                updateText(eingabe);
-            }
+        switch (gameMode) {
+            case 1:
+                if (Greenfoot.mouseClicked(this)) {
+                    eingabe = Greenfoot.ask("Bitte gebe die Dezimalzahl ein: ");
+                    if (!eingabe.isEmpty()) {
+                        this.vaules = Integer.parseInt(eingabe);
+                        gameManager.checkInputGameModeOne(vaules, row, col);
+                        updateText(eingabe);
+                    }
+                }
+                break;
+            case 2:
+                updateText(String.valueOf(decimal));
+                break;
+            default:
+                break;
         }
+
+    }
+
+    public void setDecimal(int decimals) {
+        this.decimal = decimals;
     }
 
     public void updateText(String newText) {

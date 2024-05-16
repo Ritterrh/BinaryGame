@@ -64,7 +64,7 @@ public class WGameModeOne extends  World   {
                 block.setNullOderEins(Greenfoot.getRandomNumber(2));
                 addObject(block, col * 3 + 1, row * 3 + 1);
 
-                IBinaryTextBoxResult buton = new IBinaryTextBoxResult(this, row, col);
+                IBinaryTextBoxResult buton = new IBinaryTextBoxResult( row, col, 1);
                 addObject(buton, 26, row * 3 + 1);
 
                 nullOderEinsRow.add(block.getNullOderEins());
