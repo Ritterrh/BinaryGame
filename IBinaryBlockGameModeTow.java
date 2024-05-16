@@ -15,8 +15,6 @@ public class IBinaryBlockGameModeTow extends Actor {
     private GreenfootImage ImageNull;
     private GreenfootImage ImageEinsOver;
     private GreenfootImage ImageNullOver;
-    private GreenfootImage RightEins;
-    private GreenfootImage RightNull;
     private boolean isBlockRight = false;
     private int Wert;
 
@@ -26,8 +24,6 @@ public class IBinaryBlockGameModeTow extends Actor {
         ImageNull = new GreenfootImage("blockNull.jpg");
         ImageEinsOver = new GreenfootImage("blockEinsOver.jpg");
         ImageNullOver = new GreenfootImage("blockNullOver.jpg");
-        RightEins = new GreenfootImage("blockEinsGreen.jpg");
-        RightNull = new GreenfootImage("blockNullGreen.jpg");
         setImage(ImageNull);
     }
 
@@ -37,43 +33,11 @@ public class IBinaryBlockGameModeTow extends Actor {
      * sobald der 'Act' oder 'Run' Button in der Umgebung angeklickt werden.
      */
     public void act() {
-        System.out.println("SollWert: " + SollWert + " Wert: " + Wert);
         if (!isBlockRight) {
             isMouseOver();
             MausKlickChangeValue();
         }
 
-    }
-
-    public enum BlockState {
-        RIGHT, WRONG, NONE
-    }
-
-    private BlockState state = BlockState.NONE;
-
-    private void updateImage() {
-        switch (state) {
-            case RIGHT:
-                if (Wert == 0)
-                    setImage(RightNull);
-                else
-                    setImage(RightEins);
-                break;
-            case NONE:
-                if (Wert == 0) {
-                    setImage(ImageNull);
-                } else {
-                    setImage(ImageEins);
-                }
-                break;
-            default:
-                if (Wert == 0) {
-                    setImage(ImageNull);
-                } else {
-                    setImage(ImageEins);
-                }
-                break;
-        }
     }
 
     public void isMouseOver() {
@@ -121,22 +85,6 @@ public class IBinaryBlockGameModeTow extends Actor {
     public boolean mouseOver(Actor actor) {
         mouseOwner();
         return actorMouseOver == actor;
-    }
-
-    // Methode zum Setzen des Zustands des Blocks
-    public void setState(BlockState newState) {
-        this.state = newState;
-        updateImage(); // Aktualisiere das Bild nach dem Setzen des Zustands
-    }
-
-    // Methode zum Überprüfen des aktuellen Zustands des Blocks
-    public BlockState getState() {
-        return state;
-    }
-
-    // Methode zum Markieren des Blocks als richtig platziert
-    public void setRight() {
-        setState(BlockState.RIGHT);
     }
 
     public void setWert(int wert) {
