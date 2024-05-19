@@ -1,5 +1,3 @@
-import java.util.List;
-
 import greenfoot.*;
 
 /**
@@ -16,7 +14,7 @@ public class FGameModManger {
     private Logger log = Logger.getInstance();
 
     private FLoadFromAutoSave loadFromAutoSave;
-    private FUpdateAutoSave updateAutoSave;
+    
     private WGameModeOne gameModeOne;
     
     private WGameModeTow gameModeTow;
@@ -214,7 +212,7 @@ public class FGameModManger {
 
     public void autoSaveGame() {
         log.call(levelName, levelName);
-        updateAutoSave = new FUpdateAutoSave(this.getLevel(), this.getPoints());
+        new FUpdateAutoSave(this.getLevel(), this.getPoints());
     }
 
     public void saveGame() {
