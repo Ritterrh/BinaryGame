@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "446483122758",
+    "project_id": "kulturruhr-a75ca",
+    "storage_bucket": "kulturruhr-a75ca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:446483122758:android:056b7d092f3bc330615847",
+        "android_client_info": {
+          "package_name": "com.filmprojekt1.kulturruhr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "446483122758-sre2177bspj7u109gq8gh8021u5pmu43.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.filmprojekt1.kulturruhr",
+            "certificate_hash": "9f611add84c7b7ac1e6136e3ca935725d7b69427"
+          }
+        },
+        {
+          "client_id": "446483122758-50ipt2i3p5uvpm1f2u2mahvdiqeullac.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUcRFuA4DoZKOfx2TVXVhKQXudvsNZz4Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "446483122758-50ipt2i3p5uvpm1f2u2mahvdiqeullac.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

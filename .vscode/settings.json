@@ -1,9 +1,4 @@
 {
-    "java.project.sourcePaths": [
-        "."
-    ],
-    "java.project.referencedLibraries": [
-        "c:\\Program Files\\Greenfoot\\lib\\greenfoot.jar",
-        "c:\\Program Files\\Greenfoot\\lib\\bluej.jar"
-    ]
+    "IDX.aI.enableInlineCompletion": true,
+    "IDX.aI.enableCodebaseIndexing": true
 }
